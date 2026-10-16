@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mariam | Portfolio</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --pink-primary: #ff2a85;
+            --pink-hover: #e01f72;
+            --pink-light: #ff66ab;
+            --dark-bg: #121212;
+            --dark-card: #1e1e1e;
+            --dark-card-hover: #282828;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* Text & Color Utilities */
+        .text-pink {
+            color: var(--pink-primary) !important;
+        }
+
+        .bg-pink {
+            background-color: var(--pink-primary) !important;
+            color: #fff !important;
+        }
+
+        /* Custom Buttons */
+        .btn-pink {
+            background-color: var(--pink-primary);
+            color: #ffffff;
+            border: 2px solid var(--pink-primary);
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        .btn-pink:hover {
+            background-color: var(--pink-hover);
+            border-color: var(--pink-hover);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 42, 133, 0.4);
+        }
+
+        .btn-outline-pink {
+            border: 2px solid var(--pink-primary);
+            color: var(--pink-primary);
+            transition: all 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: var(--pink-primary);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 42, 133, 0.4);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 42, 133, 0.2);
+        }
+
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--pink-primary) !important;
+        }
+
+        /* Animations & Hover Effects */
+        .profile-img {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 0 25px rgba(255, 42, 133, 0.8) !important;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Card Custom Styling */
+        .custom-card {
+            background-color: var(--dark-card) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+            color: #ffffff !important;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-10px);
+            background-color: var(--dark-card-hover) !important;
+            border-color: var(--pink-primary) !important;
+            box-shadow: 0 12px 30px rgba(255, 42, 133, 0.25) !important;
+        }
+
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .custom-card:hover .skill-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        /* Input Controls */
+        .form-control {
+            background-color: #2a2a2a;
+            border: 1px solid #3d3d3d;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border-color: var(--pink-primary);
+            box-shadow: 0 0 10px rgba(255, 42, 133, 0.5);
+        }
+
+        .form-control::placeholder {
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#home">
+            <span class="text-pink">Mariam</span> Portfolio
+        </a>
+        <button class="navbar-toggler border-0" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <div class="navbar-nav ms-auto fs-5">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Home / Hero Section -->
+<section id="home" class="py-5 d-flex align-items-center min-vh-100">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-md-7 text-center text-md-start">
+                <span class="badge bg-pink text-white mb-3 p-2 px-3 fs-6 rounded-pill">
+                    Welcome To My Portfolio
+                </span>
+                <h1 class="display-3 fw-bold">
+                    Hi, I'm <span class="text-pink">Mariam</span>
+                </h1>
+                <h2 class="h2 text-pink mb-3 fw-semibold">
+                    Web Developer
+                </h2>
+                <p class="lead text-white-50 mb-4">
+                    I build modern, responsive and user-friendly websites
+                    using HTML, CSS, Bootstrap and JavaScript.
+                </p>
+                <a href="#projects" class="btn btn-pink btn-lg me-2 mb-2 rounded-pill px-4">
+                    <i class="bi bi-briefcase me-2"></i>My Projects
+                </a>
+                <a href="#contact" class="btn btn-outline-pink btn-lg mb-2 rounded-pill px-4">
+                    Contact Me
+                </a>
+            </div>
+            <div class="col-md-5 text-center mt-4 mt-md-0">
+                <img src="mariomaa.jpg"
+                     alt="Mariam Profile"
+                     width="250"
+                     height="250"
+                     class="rounded-circle border border-4 border-pink shadow-lg profile-img object-fit-cover">
+                <div class="mt-4">
+                    <span class="badge bg-dark border border-pink text-pink p-2 px-3 rounded-pill fs-6">
+                        <i class="bi bi-code-slash me-1"></i>
+                        Creative Developer
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5" style="background-color: #181818;">
+    <div class="container py-3">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">
+                About <span class="text-pink">Me</span>
+            </h2>
+            <p class="text-white-50">
+                Get to know me better
+            </p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+            <div class="col-md-6">
+                <div class="card custom-card h-100 border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="text-pink display-5 mb-3">
+                            <i class="bi bi-person-workspace"></i>
+                        </div>
+                        <h4 class="fw-bold text-pink mb-3">Who Am I?</h4>
+                        <p class="text-white-50 fs-5">
+                            I am a passionate web developer who enjoys
+                            learning new technologies and creating
+                            useful digital experiences.
+                        </p>
+                        <p class="text-white-50 fs-5">
+                            My goal is to build clean, responsive
+                            and easy-to-use websites.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card custom-card h-100 border-0 shadow">
+                    <div class="card-header bg-pink text-white p-3 border-0">
+                        <h5 class="mb-0 fw-bold">
+                            <i class="bi bi-person-lines-fill me-2"></i>
+                            Personal Information
+                        </h5>
+                    </div>
+                    <div class="card-body p-4 fs-5">
+                        <p class="mb-3">
+                            <i class="bi bi-person-fill text-pink me-2"></i>
+                            <strong>Name:</strong> Mariam
+                        </p>
+                        <p class="mb-3">
+                            <i class="bi bi-envelope-fill text-pink me-2"></i>
+                            <strong>Email:</strong> Mariam@gmail.com
+                        </p>
+                        <p class="mb-3">
+                            <i class="bi bi-geo-alt-fill text-pink me-2"></i>
+                            <strong>Location:</strong> Egypt
+                        </p>
+                        <p class="mb-0">
+                            <i class="bi bi-code-slash text-pink me-2"></i>
+                            <strong>Role:</strong> Web Developer
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-5">
+    <div class="container py-3">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">
+                My <span class="text-pink">Skills</span>
+            </h2>
+            <p class="text-white-50">
+                Technologies I use to build websites
+            </p>
+        </div>
+        <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+                <div class="card custom-card h-100">
+                    <div class="card-body p-4">
+                        <i class="bi bi-filetype-html display-3 text-pink skill-icon d-inline-block"></i>
+                        <h5 class="fw-bold mt-3">HTML</h5>
+                        <span class="badge bg-pink">Structure</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card custom-card h-100">
+                    <div class="card-body p-4">
+                        <i class="bi bi-filetype-css display-3 text-pink skill-icon d-inline-block"></i>
+                        <h5 class="fw-bold mt-3">CSS</h5>
+                        <span class="badge bg-pink">Styling</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card custom-card h-100">
+                    <div class="card-body p-4">
+                        <i class="bi bi-bootstrap-fill display-3 text-pink skill-icon d-inline-block"></i>
+                        <h5 class="fw-bold mt-3">Bootstrap</h5>
+                        <span class="badge bg-pink">Responsive</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="card custom-card h-100">
+                    <div class="card-body p-4">
+                        <i class="bi bi-filetype-js display-3 text-pink skill-icon d-inline-block"></i>
+                        <h5 class="fw-bold mt-3">JavaScript</h5>
+                        <span class="badge bg-pink">Interactive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5" style="background-color: #181818;">
+    <div class="container py-3">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">
+                My <span class="text-pink">Projects</span>
+            </h2>
+            <p class="text-white-50">
+                Some projects I have worked on
+            </p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card custom-card h-100">
+                    <img src="https://placehold.co/600x400/ff2a85/ffffff?text=Student+System"
+                         class="card-img-top"
+                         alt="Student Management System">
+                    <div class="card-body p-4">
+                        <span class="badge bg-pink mb-2">Management</span>
+                        <h5 class="fw-bold">Student System</h5>
+                        <p class="text-white-50">
+                            A simple system for managing student records.
+                        </p>
+                        <a href="#" class="btn btn-outline-pink mt-2">
+                            View Project
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card custom-card h-100">
+                    <img src="https://placehold.co/600x400/1e1e1e/ff2a85?text=My+Website"
+                         class="card-img-top"
+                         alt="Personal Website">
+                    <div class="card-body p-4">
+                        <span class="badge bg-pink mb-2">Portfolio</span>
+                        <h5 class="fw-bold">Personal Website</h5>
+                        <p class="text-white-50">
+                            A personal website to introduce skills and work.
+                        </p>
+                        <a href="#" class="btn btn-outline-pink mt-2">
+                            View Project
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card custom-card h-100">
+                    <img src="https://placehold.co/600x400/ff2a85/ffffff?text=Online+Store"
+                         class="card-img-top"
+                         alt="Online Store">
+                    <div class="card-body p-4">
+                        <span class="badge bg-pink mb-2">E-Commerce</span>
+                        <h5 class="fw-bold">Online Store</h5>
+                        <p class="text-white-50">
+                            A simple online store with product cards.
+                        </p>
+                        <a href="#" class="btn btn-outline-pink mt-2">
+                            View Project
+                            <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container py-3">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold display-5">
+                Contact <span class="text-pink">Me</span>
+            </h2>
+            <p class="text-white-50">
+                Have a project in mind? Let's talk.
+            </p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-6">
+                <div class="card custom-card border-0 p-3">
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Your Name</label>
+                                <input type="text" class="form-control rounded-3 p-2" placeholder="Enter your name">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Your Email</label>
+                                <input type="email" class="form-control rounded-3 p-2" placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label text-white">Your Message</label>
+                                <textarea class="form-control rounded-3 p-2" rows="4" placeholder="Write your message"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-pink w-100 py-2 rounded-3 fs-5 mt-2">
+                                <i class="bi bi-send me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white text-center py-4 border-top border-secondary">
+    <div class="container">
+        <h5 class="fw-bold text-pink">
+            Mariam Portfolio
+        </h5>
+        <p class="text-white-50 mb-2">
+            Building ideas into websites.
+        </p>
+        <p class="mb-0 text-white-50 fs-6">
+            &copy; 2026 Mariam. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
